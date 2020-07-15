@@ -1,0 +1,42 @@
+<!-- add and remove hidden attribute -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.democlass {
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<h1 class="democlass">Hello World</h1>
+
+<p id="demo">Click the button to remove the class attribute from the h1 element.</p>
+
+<button onclick="myFunction()">Try it</button>
+<button onclick="myShow()">Show</button>
+<button onclick="myHide()">Hide</button>
+
+<script>
+function myFunction() {
+  document.getElementsByTagName("H1")[0].removeAttribute("class"); 
+}
+
+function myShow() {
+	// document.getElementById("demo").hidden = true;
+    document.querySelector('#demo').hidden = true;
+    //alert('show');
+}
+
+function myHide() {
+	// document.getElementById("demo").hidden = false;
+    document.querySelector('#demo').hidden = false;
+    //alert('hide');
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!--  "data-*" --- global attributes form a class of attributes called custom data attributes, that allow proprietary information to be exchanged between the HTML and its DOM representation by scripts. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.democlass {
+  color: red;
+}
+
+/* li[data-id="10784"] {
+    color: red;
+} */
+
+li[data-id] {
+    color: red;
+}
+
+</style>
+</head>
+<body>
+
+    <h1>Secret agents</h1>
+
+    <ul>
+        <li class="testDataCls" id="test-data" data-id="10784">Jason Walters, 003: Found dead in "A View to a Kill".</li>
+        <li class="testDataCls" data-id="97865">Alex Trevelyan, 006: Agent turned terrorist leader; James' nemesis in "Goldeneye".</li>
+        <li class="testDataCls" data-id="45732">James Bond, 007: The main man; shaken but not stirred.</li>
+    </ul>
+
+<button onclick="myShow()">Show</button>
+<button onclick="myHide()">Hide</button>
+    
+
+<script>
+function myShow() {
+	// document.getElementById("demo").hidden = true;
+    const testData = document.querySelector('#test-data');
+    alert(testData.dataset.id);
+    // testData.dataset.id.style["color"] = 'blue';
+    testData.style.color = 'blue';
+
+    const testDataClass = document.querySelectorAll('.testDataCls');
+    testDataClass[1].style.color = 'green';
+
+    var x, i;
+    x = document.querySelectorAll(".testDataCls");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.backgroundColor = "yellow";
+    }
+
+    //alert('show');
+}
+
+function myHide() {
+	// document.getElementById("demo").hidden = false;
+    document.querySelector('li[data-id][1]').hidden = false;
+    //alert('hide');
+}
+
+</script>
+
+</body>
+</html>
